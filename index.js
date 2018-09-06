@@ -5,8 +5,9 @@ function sum(a, b) {
 }
 
 // https://jsonplaceholder.typicode.com/
-async function getTodo() {
-   let res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+async function getTodo(todoId, fetchFunction) {
+
+   let res = await fetchFunction("https://jsonplaceholder.typicode.com/todos/" + todoId)
    return res.json();
 }
 
